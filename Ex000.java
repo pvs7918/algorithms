@@ -1,25 +1,33 @@
 public class Ex000 {
-
   public static void main(String[] args) {
-    Foo foo1 = new Foo(123);
-
-    Foo foo2 = new Foo(123);
-    remove(foo2);
+    MyLinkedList mll = new MyLinkedList();
+    mll.append(1);
   }
-
-  static void remove(Foo item) {
-  }
-
-  static void remove(int value) {
-
-  }
-
 }
 
-class Foo {
+class Node {
   int value;
 
-  public Foo(int value) {
+  public int getValue() {
+    return value;
+  }
+
+  public void setValue(int value) {
     this.value = value;
+  }
+
+  public Node(int value) {
+    this.value = value;
+  }
+}
+
+class MyLinkedList {
+  Node head;
+
+  public void append(int value) {
+    Node node = new Node(value);
+    if (this.head == null) {
+      this.head = node;
+    }
   }
 }
